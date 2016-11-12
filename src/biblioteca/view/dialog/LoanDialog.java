@@ -1,5 +1,8 @@
 package biblioteca.view.dialog;
 
+import biblioteca.controller.dialogController.LoanDialogController;
+import biblioteca.model.odt.Student;
+
 public class LoanDialog extends javax.swing.JDialog {
 
     public LoanDialog(java.awt.Frame parent, boolean modal) {
@@ -10,6 +13,22 @@ public class LoanDialog extends javax.swing.JDialog {
     public LoanDialog(java.awt.Frame parent) {
         super(parent, true);
         initComponents();
+        componentsAddListener();
+    }
+    
+    private void componentsAddListener() {
+        LoanDialogController loanDialogController = new LoanDialogController(this);
+        btnSearch.addActionListener(loanDialogController);
+        
+        btnExit.addActionListener(loanDialogController);
+    }
+    
+    public void showStudent(Student student){
+        textRegister.setText(student.getRegister());
+        textDni.setText(student.getDni());
+        textName.setText(student.getName());
+        textSubname1.setText(student.getSubname1());
+        textSubname2.setText(student.getSubname2());
     }
 
     @SuppressWarnings("unchecked")
@@ -49,6 +68,16 @@ public class LoanDialog extends javax.swing.JDialog {
         lbSubname.setText("Apellidos");
 
         btnSearch.setText("Buscar");
+
+        textRegister.setEnabled(false);
+
+        textDni.setEnabled(false);
+
+        textName.setEnabled(false);
+
+        textSubname1.setEnabled(false);
+
+        textSubname2.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,13 +122,12 @@ public class LoanDialog extends javax.swing.JDialog {
                     .addComponent(lbSubname)
                     .addComponent(lbRegister))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textSubname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textSubname2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearch))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textSubname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textSubname2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch)
                     .addComponent(textRegister, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

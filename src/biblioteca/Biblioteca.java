@@ -6,10 +6,10 @@ import biblioteca.model.manager.StateManager;
  * @author Joshua López Rivero
  */
 public class Biblioteca {
-
+    
     public static void main(String[] args) {
         StateManager m = new StateManager();
-    }
+    } 
     /*
     public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.jdbc.Driver");

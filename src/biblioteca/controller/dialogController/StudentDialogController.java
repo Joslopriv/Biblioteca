@@ -1,6 +1,7 @@
 package biblioteca.controller.dialogController;
 
 import biblioteca.model.odt.Student;
+import biblioteca.view.dialog.LoanDialog;
 import biblioteca.view.dialog.StudentDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,7 +37,8 @@ public class StudentDialogController extends MouseAdapter implements ActionListe
             studentDialog.updateTableAllStudents();
         }
         if (onButton.equalsIgnoreCase("select")) {
-            System.out.print("caca");
+            LoanDialog loanDialog = (LoanDialog) studentDialog.getParent();
+            loanDialog.showStudent(student);
             studentDialog.dispose();
         }
         if (onButton.equalsIgnoreCase("salir")) {
