@@ -38,7 +38,7 @@ public class StudentDialogController extends MouseAdapter implements ActionListe
         }
         if (onButton.equalsIgnoreCase("select")) {
             LoanDialog loanDialog = (LoanDialog) studentDialog.getParent();
-            loanDialog.showStudent(student);
+            loanDialog.getLoanDialogController().showStudent(student);
             studentDialog.dispose();
         }
         if (onButton.equalsIgnoreCase("salir")) {

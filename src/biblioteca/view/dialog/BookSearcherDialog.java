@@ -1,10 +1,95 @@
 package biblioteca.view.dialog;
 
+import biblioteca.controller.dialogController.BookSearcherDialogController;
+import javax.swing.JTextField;
+
 public class BookSearcherDialog extends javax.swing.JDialog {
+
+    private BookSearcherDialogController bookSearcherDialogController;
 
     public BookSearcherDialog(java.awt.Dialog parent) {
         super(parent, true);
         initComponents();
+    }
+
+    public BookSearcherDialogController getBookSearcherDialogController() {
+        return bookSearcherDialogController;
+    }
+
+    public void setBookSearcherDialogController(BookSearcherDialogController bookSearcherDialogController) {
+        this.bookSearcherDialogController = bookSearcherDialogController;
+    }
+
+    public JTextField getTextAuthor() {
+        return textAuthor;
+    }
+
+    public void setTextAuthor(JTextField textAuthor) {
+        this.textAuthor = textAuthor;
+    }
+
+    public JTextField getTextCode() {
+        return textCode;
+    }
+
+    public void setTextCode(JTextField textCode) {
+        this.textCode = textCode;
+    }
+
+    public JTextField getTextCondition() {
+        return textCondition;
+    }
+
+    public void setTextCondition(JTextField textCondition) {
+        this.textCondition = textCondition;
+    }
+
+    public JTextField getTextDataLoan() {
+        return textDataLoan;
+    }
+
+    public void setTextDataLoan(JTextField textDataLoan) {
+        this.textDataLoan = textDataLoan;
+    }
+
+    public JTextField getTextDataReturn() {
+        return textDataReturn;
+    }
+
+    public void setTextDataReturn(JTextField textDataReturn) {
+        this.textDataReturn = textDataReturn;
+    }
+
+    public JTextField getTextEditorial() {
+        return textEditorial;
+    }
+
+    public void setTextEditorial(JTextField textEditorial) {
+        this.textEditorial = textEditorial;
+    }
+
+    public JTextField getTextLoanCondition() {
+        return textLoanCondition;
+    }
+
+    public void setTextLoanCondition(JTextField textLoanCondition) {
+        this.textLoanCondition = textLoanCondition;
+    }
+
+    public JTextField getTextSubject() {
+        return textSubject;
+    }
+
+    public void setTextSubject(JTextField textSubject) {
+        this.textSubject = textSubject;
+    }
+
+    public JTextField getTextTitle() {
+        return textTitle;
+    }
+
+    public void setTextTitle(JTextField textTitle) {
+        this.textTitle = textTitle;
     }
 
     @SuppressWarnings("unchecked")
@@ -228,4 +313,5 @@ public class BookSearcherDialog extends javax.swing.JDialog {
     private javax.swing.JTextField textSubject;
     private javax.swing.JTextField textTitle;
     // End of variables declaration//GEN-END:variables
+
 }

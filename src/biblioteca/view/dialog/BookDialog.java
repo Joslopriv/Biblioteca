@@ -23,7 +23,7 @@ public class BookDialog extends javax.swing.JDialog {
         this.btnSelect.setEnabled(false);
         this.bookSql = new BookSqlControl();
 
-        this.viewTable = new ViewTable(bookSql.allBooks());
+        this.viewTable = new ViewTable(bookSql.selectAll());
         this.booksTable.setModel(this.viewTable);
 
         this.componentsAddListener();
@@ -37,7 +37,7 @@ public class BookDialog extends javax.swing.JDialog {
         this.btnDelete.setEnabled(false);
         this.bookSql = new BookSqlControl();
 
-        this.viewTable = new ViewTable(bookSql.allBooks());
+        this.viewTable = new ViewTable(bookSql.selectAll());
         this.booksTable.setModel(this.viewTable);
 
         this.componentsAddListener();
@@ -136,12 +136,12 @@ public class BookDialog extends javax.swing.JDialog {
     }
 
     public void updateTableAllBooks() {
-        this.viewTable = new ViewTable(bookSql.allBooks());
+        this.viewTable = new ViewTable(bookSql.selectAll());
         this.booksTable.setModel(this.viewTable);
     }
 
     public void updateTableForColumnValue(String column, String value) {
-        this.viewTable = new ViewTable(bookSql.booksForColumnValue(column, value));
+        this.viewTable = new ViewTable(bookSql.selectForColumnValue(column, value));
         this.booksTable.setModel(this.viewTable);
     }
 

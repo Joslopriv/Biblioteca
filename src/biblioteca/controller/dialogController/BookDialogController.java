@@ -2,6 +2,7 @@ package biblioteca.controller.dialogController;
 
 import biblioteca.model.odt.Book;
 import biblioteca.view.dialog.BookDialog;
+import biblioteca.view.dialog.BookSearcherDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -36,7 +37,8 @@ public class BookDialogController extends MouseAdapter implements ActionListener
             bookDialog.updateTableAllBooks();
         }
          if (onButton.equalsIgnoreCase("select")) {
-            System.out.print("caca");
+            BookSearcherDialog bookSearcherDialog = (BookSearcherDialog) bookDialog.getParent();
+            bookSearcherDialog.getBookSearcherDialogController().showBook(book);
             bookDialog.dispose();
         }
         if (onButton.equalsIgnoreCase("salir")) {

@@ -1,9 +1,12 @@
 package biblioteca.view.dialog;
 
 import biblioteca.controller.dialogController.LoanDialogController;
-import biblioteca.model.odt.Student;
+
+import javax.swing.JTextField;
 
 public class LoanDialog extends javax.swing.JDialog {
+
+    private LoanDialogController loanDialogController;
 
     public LoanDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -15,20 +18,62 @@ public class LoanDialog extends javax.swing.JDialog {
         initComponents();
         componentsAddListener();
     }
-    
+
     private void componentsAddListener() {
-        LoanDialogController loanDialogController = new LoanDialogController(this);
+        loanDialogController = new LoanDialogController(this);
         btnSearch.addActionListener(loanDialogController);
-        
+        btnInsert.addActionListener(loanDialogController);
+        btnUpdate.addActionListener(loanDialogController);
+        btnDelete.addActionListener(loanDialogController);
         btnExit.addActionListener(loanDialogController);
     }
-    
-    public void showStudent(Student student){
-        textRegister.setText(student.getRegister());
-        textDni.setText(student.getDni());
-        textName.setText(student.getName());
-        textSubname1.setText(student.getSubname1());
-        textSubname2.setText(student.getSubname2());
+
+    public JTextField getTextDni() {
+        return textDni;
+    }
+
+    public void setTextDni(JTextField textDni) {
+        this.textDni = textDni;
+    }
+
+    public JTextField getTextName() {
+        return textName;
+    }
+
+    public void setTextName(JTextField textName) {
+        this.textName = textName;
+    }
+
+    public JTextField getTextRegister() {
+        return textRegister;
+    }
+
+    public void setTextRegister(JTextField textRegister) {
+        this.textRegister = textRegister;
+    }
+
+    public JTextField getTextSubname1() {
+        return textSubname1;
+    }
+
+    public void setTextSubname1(JTextField textSubname1) {
+        this.textSubname1 = textSubname1;
+    }
+
+    public JTextField getTextSubname2() {
+        return textSubname2;
+    }
+
+    public void setTextSubname2(JTextField textSubname2) {
+        this.textSubname2 = textSubname2;
+    }
+
+    public LoanDialogController getLoanDialogController() {
+        return loanDialogController;
+    }
+
+    public void setLoanDialogController(LoanDialogController loanDialogController) {
+        this.loanDialogController = loanDialogController;
     }
 
     @SuppressWarnings("unchecked")

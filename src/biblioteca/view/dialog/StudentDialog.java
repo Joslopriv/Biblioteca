@@ -23,7 +23,7 @@ public class StudentDialog extends javax.swing.JDialog {
         this.btnSelect.setEnabled(false);
         this.studentSql = new StudentSqlControl();
 
-        this.viewTable = new ViewTable(studentSql.allStudents());
+        this.viewTable = new ViewTable(studentSql.selectAll());
         this.studentsTable.setModel(this.viewTable);
 
         this.componentsAddListener();
@@ -37,7 +37,7 @@ public class StudentDialog extends javax.swing.JDialog {
         this.btnDelete.setEnabled(false);
         this.studentSql = new StudentSqlControl();
 
-        this.viewTable = new ViewTable(studentSql.allStudents());
+        this.viewTable = new ViewTable(studentSql.selectAll());
         this.studentsTable.setModel(this.viewTable);
 
         this.componentsAddListener();
@@ -128,12 +128,12 @@ public class StudentDialog extends javax.swing.JDialog {
     }
 
     public void updateTableAllStudents() {
-        this.viewTable = new ViewTable(studentSql.allStudents());
+        this.viewTable = new ViewTable(studentSql.selectAll());
         this.studentsTable.setModel(this.viewTable);
     }
 
     public void updateTableForColumnValue(String column, String value) {
-        this.viewTable = new ViewTable(studentSql.studentsForColumnValue(column, value));
+        this.viewTable = new ViewTable(studentSql.selectForColumnValue(column, value));
         this.studentsTable.setModel(this.viewTable);
     }
 
